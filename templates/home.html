@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+
+      <title></title>
+  </head>
+  <body>
+    <h1>Dashboard for country and record wise analytics</h1>
+
+    <form class="form-inline" method="POST" action="/">
+        <label>
+            <select name='country'>
+              <option selected value="{{ country_select }}">{{country_select}}</option>
+              {% for x in country %}
+              <option value= "{{x}}">{{x}}</option>"
+              {% endfor %}
+            </select>
+        </label>
+        <label>
+            <select name='record'>
+                <option selected value="{{ record_select }}">{{record_select}}</option>
+                {% for y in record %}
+                <option value= "{{y}}">{{y}}</option>"
+                {% endfor %}
+            </select>
+        </label>
+        <button type="submit" class="btn btn-default">Go</button>
+    </form>
+    <br>
+    <h2>
+        Country = {{ country_select }}
+        <br>
+        Record = {{ record_select }}
+    </h2>
+    <br>
+    (In hectares)
+    <h3>
+        -> Mean needed land for sequestering the carbon = {{ carbon_mean }}
+        <br>
+        -> Needed land for sequestering the carbon in 2014 = {{ carbon2014 }}
+        <br>
+        -> Total land available in country sequestering carbon in 2014 = {{ total2014 }}
+        <br>
+        <br>
+        -> {{ code }}
+    </h3>
+    <img alt="Pie chart" src={{ pie2014 }}>
+    <br>
+    <img alt="Scatter plot" src={{ yvsgl }}>
+    <img alt="Scatter plot" src={{ yvsbul }}>
+    <img alt="Scatter plot" src={{ yvsfl }}>
+    <img alt="Scatter plot" src={{ yvsfg }}>
+    <img alt="Scatter plot" src={{ yvscl }}>
+    <img alt="Scatter plot" src={{ yvsc }}>
+    <img alt="Scatter plot" src={{ yvst }}>
+    <br>
+    <h2>
+        Selected data description:
+    </h2>
+        {{ details|safe }}
+
+    <br>
+
+  </body>
+
+</html>
