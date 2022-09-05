@@ -1,13 +1,22 @@
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
-
-      <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+        <link rel="stylesheet" href={{ stylesheet }}>
+      <title>Dashboard for country and record wise analytics</title>
   </head>
   <body>
-    <h1>Dashboard for country and record wise analytics</h1>
-
+    <header>
+		<div class="header-title">
+			Dashboard for country and record wise analytics
+		</div>
+	</header>
+    <br><br>
+    <div class="content">
     <form class="form-inline" method="POST" action="/">
         <label>
+            &nbsp;&nbsp;Country:
             <select name='country'>
               <option selected value="{{ country_select }}">{{country_select}}</option>
               {% for x in country %}
@@ -15,7 +24,9 @@
               {% endfor %}
             </select>
         </label>
+        <br><br>&nbsp;&nbsp;
         <label>
+            Record:&nbsp;
             <select name='record'>
                 <option selected value="{{ record_select }}">{{record_select}}</option>
                 {% for y in record %}
@@ -23,26 +34,24 @@
                 {% endfor %}
             </select>
         </label>
+        <br><br>&nbsp;&nbsp;
         <button type="submit" class="btn btn-default">Go</button>
     </form>
+    </div>
     <br>
-    <h2>
-        Country = {{ country_select }}
+    &nbsp;(In hectares)
+    <content>
+        <div class="content">
+        &nbsp;&nbsp;> Mean needed land for sequestering the carbon = {{ carbon_mean }}
         <br>
-        Record = {{ record_select }}
-    </h2>
-    <br>
-    (In hectares)
-    <h3>
-        -> Mean needed land for sequestering the carbon = {{ carbon_mean }}
+        &nbsp;&nbsp;> Needed land for sequestering the carbon in 2014 = {{ carbon2014 }}
         <br>
-        -> Needed land for sequestering the carbon in 2014 = {{ carbon2014 }}
-        <br>
-        -> Total land available in country sequestering carbon in 2014 = {{ total2014 }}
+        &nbsp;&nbsp;> Total land available in country sequestering carbon in 2014 = {{ total2014 }}
         <br>
         <br>
-        -> {{ code }}
-    </h3>
+        </div>
+            &nbsp;&nbsp; {{ code|safe }}
+     </content>
     <img alt="Pie chart" src={{ pie2014 }}>
     <br>
     <img alt="Scatter plot" src={{ yvsgl }}>
@@ -54,12 +63,14 @@
     <img alt="Scatter plot" src={{ yvst }}>
     <br>
     <h2>
-        Selected data description:
+        &nbsp;&nbsp;Selected data description:
     </h2>
-        {{ details|safe }}
+    &nbsp;&nbsp;    {{ details|safe }}
 
     <br>
-
+    <footer>
+        Thank you for visiting the dashboard and we hope it was helpful
+    </footer>
   </body>
 
 </html>

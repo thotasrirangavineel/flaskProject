@@ -1,0 +1,104 @@
+html, body{
+	margin: 0px;
+	max-width: 99.36%;
+}
+
+@media screen and (max-width: 760px)
+{
+	html, body{
+		cursor: default;
+	}
+}
+
+header{
+		height: 5vw;
+}
+
+@media screen and (orientation: landscape)
+{
+	header{
+		overflow: hidden;
+		background-color: #228B22;
+		height: 5vw;
+		width: 100%;
+		padding: 0.64vw;
+		top: 0;
+		left: 0;
+		display: inline-block;
+	}
+}
+
+@media screen and (max-width: 760px) and (orientation: landscape)
+{
+	header{
+		height: 5vw;
+	}
+}
+
+@media only screen and (orientation:portrait){
+	header{
+		overflow: hidden;
+		background-color: #228B22;
+		height: 24vw;
+		width: 100%;
+		padding: 0.64vw;
+		top: 0;
+		left: 0;
+		display: inline-block;
+	}
+}
+
+content{
+	display: inline-block;
+	width: 100%;
+}
+
+footer{
+	position: relative;
+	background-color: #228B22;
+	height: 2vw;
+	width: 100%;
+	bottom: 0vw;
+	text-align: center;
+	font-size: 1.28vw;
+	padding: 0.32vw;
+	color: #fff;
+}
+
+@media only screen and (orientation:portrait){
+	footer{
+		font-size: 3.2vw;
+		height: 7vw;
+	}
+}
+
+img {
+  padding: 0.1vw;
+  height: auto;
+  border: 0.3vw solid gold;
+  margin: 0.5vw auto;
+}
+
+@media screen and (orientation:landscape)
+{
+	.header-title{
+		font-size: 4vw;
+		font-family: serif;
+		color: #fff;
+		text-align: center;
+	}
+}
+
+@media only screen and (orientation:portrait){
+	.header-title{
+		font-size: 8vw;
+		font-family: serif;
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.content-body{
+	text-align: left;
+	padding-left: 1vw;
+}

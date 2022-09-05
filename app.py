@@ -145,9 +145,9 @@ def mainbody():
             (nfa['year'] == 2014) & (nfa['country'] == country_select) & (nfa['record'] == record_select), ['carbon',
                                                                                                             'total']]
         if row2014['carbon'][index] > row2014['total'][index]:
-            code = '> Code Red, implying that the situation is out of control in this country and the land distribution is not able to sequester the carbon. We suggest to decrease the carbon output or increase the land cover for sequestering the carbon content'
+            code = '>> <b>Code Red</b>, implying that the situation is out of control in this country and the land distribution is not able to sequester the carbon. We suggest to decrease the carbon output or increase the land cover for sequestering the carbon content'
         else:
-            code = '> Code Green, implying that the situation is under control in this country and the land distribution is able in sequestering the carbon. We suggest measures be taken to maintain the composition'
+            code = '>> <b>Code Green</b>, implying that the situation is under control in this country and the land distribution is able in sequestering the carbon. We suggest measures be taken to maintain the composition'
     else:
         carbon2014 = ''
         total2014 = ''
@@ -190,7 +190,7 @@ def mainbody():
                            yvsc='static/yvsc.png', yvsfl='static/yvsfl.png', yvsfg='static/yvsfg.png', country=country,
                            record=record, country_select=country_select, record_select=record_select,
                            carbon_mean=carbon_mean, carbon2014=carbon2014, total2014=total2014, details=details,
-                           code=code)
+                           code=code, stylesheet='static/css/stylesheet.css')
 
 
 # to initiate the flask container
